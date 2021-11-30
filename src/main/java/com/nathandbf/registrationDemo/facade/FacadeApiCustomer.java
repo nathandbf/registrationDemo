@@ -3,13 +3,13 @@ package com.nathandbf.registrationDemo.facade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.nathandbf.registrationDemo.controller.ControllerCustomer;
+import com.nathandbf.registrationDemo.controller.CustomerController;
 import com.nathandbf.registrationDemo.entity.Response;
 
 @Service
 public class FacadeApiCustomer {
 	@Autowired
-	private ControllerCustomer controllerCustomer;
+	private CustomerController controllerCustomer;
 	/**
 	 * Method responsible for 'unifying' all controllers method calls for the 
 	 * customer register flow.

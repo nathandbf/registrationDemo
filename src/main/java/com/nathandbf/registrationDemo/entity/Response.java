@@ -1,5 +1,7 @@
 package com.nathandbf.registrationDemo.entity;
 
+import java.util.Objects;
+
 public class Response {
 	private int code;
 	private String message;
@@ -25,6 +27,16 @@ public class Response {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Response other = (Response) obj;
+		return code == other.code && Objects.equals(message, other.message);
+	}
 }

@@ -10,7 +10,7 @@ public class Validator {
 	 * @param cpf
 	 * @return TRUE if it is valid, FALSE if isn't
 	 */
-	public boolean validatecpf(String cpf) {
+	public boolean validateCpf(String cpf) {
 		if(cpf==null) {
 			return false;
 		}

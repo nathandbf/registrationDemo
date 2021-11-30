@@ -13,7 +13,7 @@ import com.nathandbf.registrationDemo.entity.Response;
 import com.nathandbf.registrationDemo.messages.Message;
 import com.nathandbf.registrationDemo.util.Validator;
 @Controller
-public class ControllerCustomer {
+public class CustomerController {
 
 	@Autowired
 	private CustomerDAO customerDAO;
@@ -39,7 +39,7 @@ public class ControllerCustomer {
 		
 		Validator validator = new Validator();
 		Response response = new Response();
-		if (validator.validateName(name) && validator.validatecpf(cpf)) {
+		if (validator.validateName(name) && validator.validateCpf(cpf)) {
 			try {
 				Address adress = new Address(country, state, city, street, zip);
 				Customer customer = new Customer(name, cpf, adress);

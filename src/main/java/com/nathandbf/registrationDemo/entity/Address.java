@@ -1,5 +1,7 @@
 package com.nathandbf.registrationDemo.entity;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -83,6 +85,51 @@ public class Address {
 	public void setZip(String zip) {
 		this.zip = zip;
 	}
+	
+	
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Address other = (Address) obj;
+		return Objects.equals(city, other.city) && Objects.equals(country, other.country)
+				&& Objects.equals(id, other.id) && Objects.equals(state, other.state)
+				&& Objects.equals(street, other.street) && Objects.equals(zip, other.zip);
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Address [id=");
+		builder.append(id);
+		builder.append(", country=");
+		builder.append(country);
+		builder.append(", state=");
+		builder.append(state);
+		builder.append(", city=");
+		builder.append(city);
+		builder.append(", street=");
+		builder.append(street);
+		builder.append(", zip=");
+		builder.append(zip);
+		builder.append("]");
+		return builder.toString();
+	}
+	
+	
 	
 	
 }
